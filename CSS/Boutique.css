@@ -5,4 +5,54 @@
 }
 header nav {
     display: flex;
+    justify-content: space-around;
 }
+nav, ul, .list {
+    display: flex;
+}
+/* pour le logo Macrea */
+nav div.logo {
+  font-size: 1.7em;
+  font-style: italic;
+  transition: 0.6s ease-in-out;
+}
+.logo:hover {
+  transform: scale(0.8);
+}
+/* NAVBAR  */
+nav a, .icone {
+    text-decoration: none;
+     color: rgb(133, 41, 75);
+  font-size: 1.3em;
+  font-weight: bold;
+}
+nav li {
+    list-style: none;
+    padding: 15px;
+}
+nav .icone{
+    padding-top: 10px;
+}
+nav i {
+    padding: 10px;
+}
+nav {
+  width: 100%;
+  position: fixed;
+  justify-content: space-around;
+   background-color: rgba(240, 225, 191, 0.83);
+   border-bottom: 1PX solid rgb(243, 200, 177);
+   align-items: center;
+}
+/* Animations de la nav au survol */
+nav ul li {
+   transition: 0.6s ease-in-out;
+}
+nav ul li:hover{
+     background-color: #f8b075;
+  transform: scale(1.05);
+  border-radius: 50px 0 50px 0;
+}
+/******  LES SECTIONS **********/
+
+
