@@ -74,12 +74,15 @@ nav a,
 }
 nav {
   display: flex;
-  /* width: 100%; */
-  /* position: fixed; */
   justify-content: space-around;
-  background-color: rgba(240, 225, 191, 0.83);
   border-bottom: 1px solid rgb(243, 200, 177);
   align-items: center;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  background-color: transparent;
+  backdrop-filter: blur(10px);
 }
 nav ul {
   display: flex;
@@ -114,6 +117,7 @@ nav i {
 .row {
   display: flex;
   flex-direction: row-reverse;
+  padding-top: 55px;
 }
 .row h1 {
   text-transform: uppercase;
@@ -329,12 +333,6 @@ button:hover {
   border-radius: 50px 0 50px 0;
 }
 /* FOOTER */
-footer {
-  background: url(../images/Macaron_petale.jpg);
-  background-position: center;
-  background-size: cover;
-  height: 50vh;
-}
 #footer_section {
   background-color: rgb(239, 233, 186);
 }
@@ -356,7 +354,9 @@ footer h3 {
   font-weight: bold;
 }
 .flex img {
-  width: 90%;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
   box-shadow: 17px 4px 13px 11px rgb(225 194 158);
   transition: 0.6s ease-in-out;
   cursor: pointer;
@@ -367,16 +367,109 @@ footer h3 {
 }
 .flex {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+  align-items: center;
   margin: 0 auto;
-  width: 70%;
-  /* border: 2px solid red; */
+  width: 80%;
   padding: 10px;
 }
 footer .copy {
-  /* background-color: #a74d5c; */
-  color: #fff;
+  background-color: rgb(123, 177, 173);
+  color: #090236;
   text-align: center;
   padding: 15px;
   font-size: 1.2em;
+}
+/******** MEDIA QUERY  ***********/
+/* Écrans larges (ordinateur de bureau) */
+@media (min-width: 992px) {
+  .row {
+    flex-direction: row-reverse;
+  }
+  .carousel-item {
+    width: 20%; /* Pour ajuster les éléments du carrousel */
+  }
+  .flex {
+    width: 90%;
+  }
+  .flex img {
+    width: 80%;
+  }
+}
+
+/* Tablettes (écrans moyens) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .navbar .list ul {
+    flex-direction: column;
+  }
+  .row {
+    flex-direction: column;
+  }
+  .col-6 {
+    width: 100%;
+  }
+  .box {
+    flex-direction: column;
+  }
+  .flex {
+    flex-direction: column;
+  }
+  .flex img {
+    width: 90%;
+    margin-bottom: 10px;
+  }
+  .carousel-item {
+    width: 40%;
+  }
+  .texte h3 {
+    font-size: 2em;
+  }
+  .banniere h3 {
+    font-size: 2.2em;
+  }
+}
+
+/* Petits écrans (mobiles) */
+@media (max-width: 767px) {
+  .navbar .list ul {
+    flex-direction: column;
+  }
+  .row {
+    flex-direction: column;
+  }
+  .col-6,
+  .col-12 {
+    width: 100%;
+  }
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+  nav ul li {
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+  }
+  h1,
+  h2,
+  h3 {
+    font-size: 1.5em;
+  }
+  .texte h3 {
+    font-size: 1.8em;
+  }
+  .banniere h3 {
+    font-size: 1.8em;
+  }
+  .flex img {
+    width: 80%;
+    margin: 5px 0;
+  }
+  .carousel-item {
+    width: 80%;
+  }
+  .box {
+    flex-direction: column;
+    align-items: center;
+  }
 }
