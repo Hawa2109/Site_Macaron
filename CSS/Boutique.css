@@ -188,9 +188,10 @@ nav ul li:hover {
 }
 .produits h4 {
   text-align: center;
+  color: #fa80b7;
   padding: 5px;
   font-weight: normal;
-  font-size: 1.5em;
+  font-size: 1.6em;
 }
 /****** Pour les buttons acheter  *********/
 .produits .achat {
@@ -223,4 +224,81 @@ span:hover {
   background-color: #f77690;
   padding: 5px;
   border-radius: 50%;
+}
+/******* MEDIA QUERY  ********/
+/* Tablettes (largeur max de 768px) */
+@media (max-width: 768px) {
+  /* Adapter la grille de la section produits */
+  #produits_B .produits {
+    grid-template-columns: repeat(auto-fit, minmax(45%, 1fr));
+    gap: 20px;
+  }
+
+  /* Adapter la section header */
+  .row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .row h1 {
+    font-size: 1.5em;
+  }
+
+  .row p {
+    width: 90%;
+    font-size: 0.9em;
+  }
+
+  .col-6 {
+    width: 80%;
+  }
+}
+
+/* Mobiles (largeur max de 576px) */
+@media (max-width: 576px) {
+  /* Adapter la grille de la section produits */
+  #produits_B .produits {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  /* Pour  le header */
+  nav {
+    flex-direction: column;
+    /* padding: 10px; */
+  }
+
+  nav .logo {
+    font-size: 1.5em;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul li {
+    /* padding: 10px; */
+    font-size: 1.1em;
+  }
+
+  .row h1 {
+    font-size: 1.2em;
+  }
+
+  .row p {
+    font-size: 0.8em;
+  }
+
+  /* faire adapter les boutons */
+  .row button,
+  .produits .achat {
+    font-size: 0.9em;
+    padding: 8px;
+  }
+
+  /* Pour faire adapter les prix */
+  .produits .prix span {
+    font-size: 1.3em;
+  }
 }
