@@ -100,6 +100,7 @@ nav {
   background-color: transparent;
   backdrop-filter: blur(10px);
 }
+
 /* Animations de la nav au survol */
 nav ul li {
   transition: 0.6s ease-in-out;
@@ -243,7 +244,7 @@ span:hover {
 }
 .banniere_img h3:hover {
   letter-spacing: 3px;
-  text-shadow:8px 6px 11px black;
+  text-shadow: 8px 6px 11px black;
   color: #fff;
 }
 .banniere_img p {
@@ -350,7 +351,6 @@ span:hover {
 /*********** FOOTER *************/
 footer {
   background-color: #ed865d;
- 
 }
 footer p {
   font-size: 15px;
@@ -380,9 +380,8 @@ footer .div1 p {
 footer h3 {
   transition: 0.5s;
 }
-footer h3:hover{
+footer h3:hover {
   letter-spacing: 0.5px;
-
 }
 footer .div2 h3 {
   /* margin-bottom: 10px; */
@@ -412,12 +411,9 @@ footer .div2 ul a:hover {
 footer .div3 {
   text-align: center;
 }
-footer .div3 p:first-child{
+footer .div3 p:first-child {
   margin-top: 25px;
-font-size: 25px;
-}
-footer .div3 p:first-child:hover{
-
+  font-size: 25px;
 }
 footer .div3 p:last-child {
   font-size: 12px;
@@ -425,19 +421,32 @@ footer .div3 p:last-child {
   margin-top: 25px;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 /******* MEDIA QUERY  ********/
+@media screen and (max-width: 1200px) {
+  #produits_B .produits {
+    grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
+  }
+}
 /* Tablettes (largeur max de 768px) */
 @media (max-width: 768px) {
   /* Adapter la grille de la section produits */
   #produits_B .produits {
     grid-template-columns: repeat(auto-fit, minmax(45%, 1fr));
-    gap: 20px;
+    /* gap: 20px; */
+  }
+  .banniere_img {
+    height: auto;
   }
 
   /* Adapter la section header */
   .row {
     flex-direction: column;
-    align-items: center;
+    /* align-items: center; */
   }
 
   .row h1 {
@@ -451,6 +460,10 @@ footer .div3 p:last-child {
 
   .col-6 {
     width: 80%;
+  }
+  button {
+    padding: 8px;
+    font-size: 0.9em;
   }
 }
 
@@ -501,4 +514,48 @@ footer .div3 p:last-child {
   .produits .prix span {
     font-size: 1.3em;
   }
+}
+@media screen and (max-width: 480px) {
+  .row div {
+    width: 100%;
+  }
+  #produits_B .produits {
+    grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+  }
+  nav {
+    justify-content: space-between;
+  }
+  nav ul li {
+    padding: 10px;
+    font-size: 1em;
+  }
+  .row h1 {
+    font-size: 1.5em;
+  }
+  .row p {
+    font-size: 0.9em;
+  }
+  .banniere_img h3,
+  .banniere_img p {
+    font-size: 1em;
+    padding: 10px;
+  }
+  footer div {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .row div {
+    width: 100%;
+  }
+  /* nav ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+  } */
+
+  /* nav ul.active {
+    display: flex;
+  } */
 }
